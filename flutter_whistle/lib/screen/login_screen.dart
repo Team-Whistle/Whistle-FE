@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
+import '../authentication/kakao_login.dart';
+import '../view_model/login_view_model.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final viewModel = LoginViewModel(KaKaoAuth());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () async {
+            await viewModel.login();
+            setState(() {});
+            print(viewModel.isLogined);
+          },
           child: Text('카카오 로그인'),
         ),
       ),
