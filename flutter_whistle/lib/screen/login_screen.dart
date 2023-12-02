@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
           onPressed: () async {
             await viewModel.login();
             setState(() {});
-            print(viewModel.isLogined);
+            print(viewModel.user);
           },
           child: Text('카카오 로그인'),
         ),

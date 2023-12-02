@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whistle/component/gathering_room_create_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,9 +8,15 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text('카카오 로그인'),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                GatheringRoomCreateButton(),
+              ],
+            ),
+          ),
         ),
       ),
     );

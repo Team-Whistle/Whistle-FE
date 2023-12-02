@@ -1,7 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_whistle/screen/login_screen.dart';
+import 'package:flutter_whistle/screen/home_screen.dart';
+import 'package:flutter_whistle/widget/bottom_navigator_widget.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
+
+import 'widget/appbar_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,9 +20,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
-      home: LoginScreen(),
+      home: Scaffold(
+        appBar: AppbarWidget(),
+        body: HomeScreen(),
+        bottomNavigationBar: BottomNavigatorWidget(),
+      ),
     );
   }
 }

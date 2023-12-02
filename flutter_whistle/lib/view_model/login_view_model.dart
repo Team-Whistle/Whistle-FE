@@ -3,7 +3,6 @@ import '../authentication/social_login.dart';
 
 class LoginViewModel {
   final SocialLogin _socialLogin;
-  String? accessToken;
   bool isLogined = false;
   User? user;
   LoginViewModel(this._socialLogin);
@@ -11,8 +10,9 @@ class LoginViewModel {
   Future login() async {
     isLogined = await _socialLogin.login() == true;
     if (isLogined) {
+      // final kakaoToken = await UserApi.instance.loginWithKakaoAccount();
       user = await UserApi.instance.me();
-      print(_socialLogin.login());
+      print('Login success');
     }
   }
 
