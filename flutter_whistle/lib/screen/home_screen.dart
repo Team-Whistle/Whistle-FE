@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whistle/component/gathering_list_item.dart';
 import 'package:flutter_whistle/component/gathering_room_create_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 GatheringRoomCreateButton(),
+                GatheringListItem(),
               ],
             ),
           ),
