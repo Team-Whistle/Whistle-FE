@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_whistle/screen/home_screen.dart';
+import 'package:flutter_whistle/screen/login_screen.dart';
 import 'package:flutter_whistle/widget/bottom_navigator_widget.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late Widget selectedScreen = HomeScreen();
+  late Widget selectedScreen = LoginScreen();
   int currentIndex = 0; // currentIndex를 상태로 유지
 
   @override
