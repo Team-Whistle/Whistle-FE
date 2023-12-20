@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whistle/main.dart';
 import '../authentication/kakao_login.dart';
 import '../view_model/login_view_model.dart';
 
@@ -14,11 +15,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    MyAppState? main = context.findAncestorStateOfType<MyAppState>();
+
     return Scaffold(
       body: SafeArea(
         child: ElevatedButton(
           onPressed: () async {
             await viewModel.login();
+            main?.setState(() {
+              main.isLogined = true;
+            });
             setState(() {});
             print(viewModel.user);
           },

@@ -20,19 +20,19 @@ void main() async {
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
+  bool isLogined = false;
   late Widget selectedScreen = LoginScreen();
   int currentIndex = 0; // currentIndex를 상태로 유지
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppbarWidget(),
-        body: selectedScreen,
+        body: isLogined ? HomeScreen() : selectedScreen,
         bottomNavigationBar: BottomNavigatorWidget(
           onItemSelected: (index) {
             setState(() {
